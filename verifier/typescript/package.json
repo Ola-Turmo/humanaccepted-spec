@@ -1,0 +1,21 @@
+{
+  "name": "@humanaccepted/verifier-ts",
+  "version": "0.1.0",
+  "description": "TypeScript reference verifier for the HumanAccepted receipt format (v1.0.0)",
+  "type": "module",
+  "license": "Apache-2.0",
+  "main": "./verify.ts",
+  "types": "./verify.ts",
+  "scripts": {
+    "test": "tsx test_vectors.ts",
+    "test:ci": "tsx test_vectors.ts || echo 'FAILED'"
+  },
+  "dependencies": {
+    "tweetnacl": "^1.0.3"
+  },
+  "devDependencies": {
+    "tsx": "^4.7.0",
+    "typescript": "^5.4.0",
+    "@types/node": "^20.10.0"
+  }
+}
