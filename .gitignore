@@ -18,4 +18,3 @@ build/
 
 # TypeScript verifier (verifier/typescript) — deps installed locally
 verifier/typescript/node_modules/
-verifier/typescript/test_vectors.cjs
