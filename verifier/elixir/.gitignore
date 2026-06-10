@@ -1,0 +1,6 @@
+# Elixir / Mix
+_build/
+deps/
+.elixir_ls/
+mix.lock
+*.beam
