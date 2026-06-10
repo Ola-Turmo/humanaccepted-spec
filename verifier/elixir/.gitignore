@@ -4,3 +4,4 @@ deps/
 .elixir_ls/
 mix.lock
 *.beam
+_build/

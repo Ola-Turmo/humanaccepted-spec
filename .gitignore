@@ -19,3 +19,4 @@ build/
 # TypeScript verifier (verifier/typescript) — deps installed locally
 verifier/typescript/node_modules/
 package-lock.json
+.run-elixir-conformance.sh
