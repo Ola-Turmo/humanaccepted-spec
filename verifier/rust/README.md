@@ -89,9 +89,11 @@ state. `verify()` is deterministic and side-effect-free.
   canonical bytes it computed. If you need to inspect them (for example
   for cross-implementation conformance), call
   `humanaccepted_verifier::canonicalize` directly.
-- **Receipt format versioning beyond v1.** v0.1.0 receipts (the
-  pre-release) and any future v2+ are rejected at the version check.
-  Add support for new versions in a new file, not by forking this one.
+- **Receipt format versioning beyond v1.** Pre-v1.0.0 receipts (the
+  v0.1.0 release was wire-compatible with v1.0.0 and is therefore still
+  accepted; see the `version` field's value `1`) and any future v2+ are
+  rejected at the version check. Add support for new versions in a new
+  file, not by forking this one.
 
 ## Why byte-exact?
 

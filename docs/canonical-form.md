@@ -1,8 +1,8 @@
 # Canonical form
 
-> Version: v0.1.0 · part of the HumanAccepted receipt format spec.
+> Version: v1.0.0 · part of the HumanAccepted receipt format spec.
 
-The receipt format is bytes-sensitive. Two implementations that produce the same logical receipt but different bytes will produce different signatures. The canonical form below is byte-exact between the reference TypeScript, Python, and Go implementations, and is verified by the 60-line reference verifier.
+The receipt format is bytes-sensitive. Two implementations that produce the same logical receipt but different bytes will produce different signatures. The canonical form below is byte-exact between all 5 reference implementations (Python, Go, TypeScript, Rust, Elixir), and is verified by the 4 conformance test vectors in `vectors/v1/`.
 
 ## Rules
 
@@ -38,4 +38,4 @@ The reference implementations in `verifier/python/verify.py` produce canonical b
 
 ## Why this matters
 
-The 4 Ed25519 canonical bugs in the v0.1.0 ship (caught by the smoke test) all stemmed from drift between the sign-time and verify-time canonical form. Examples: signing before a field was set, `null` vs `undefined` confusion, `null` coerced to `[]`, URI prefix mismatches. This doc is the spec that prevents those from re-appearing in alternative implementations.
+The 4 Ed25519 canonical bugs in the v0.1.0 ship (caught by the smoke test) all stemmed from drift between the sign-time and verify-time canonical form. Examples: signing before a field was set, `null` vs `undefined` confusion, `null` coerced to `[]`, URI prefix mismatches. This doc is the spec that prevents those from re-appearing in alternative implementations, and the 4 vectors in `vectors/v1/` are designed to catch regressions of all 4 categories.

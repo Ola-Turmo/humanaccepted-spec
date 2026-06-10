@@ -36,6 +36,7 @@ doc and the CHANGELOG, and they MUST include a new entry in
    - The CHANGELOG update
    - A new entry in `vectors/v1/` (see below)
    - The Python reference verifier updated if the change affects verification logic
+   - The other 4 reference verifiers (Go, TypeScript, Rust, Elixir) updated to match
 4. **After merge**, the hosted reference implementation (in the private
    product repo) will roll the change on a schedule agreed with the
    maintainers. The hosted product is a separate, paid service and is not
@@ -52,14 +53,20 @@ An implementation is conformant if and only if it produces the same
 A new test vector is required for any new canonical-form edge case (e.g.
 empty arrays, deeply nested objects, or unusual Unicode). The Python
 reference verifier is updated to load and run the vectors in its test
-suite.
+suite. The other 4 reference verifiers (Go, TypeScript, Rust, Elixir)
+are also updated to pass the new vector, so the byte-exact invariant
+across all 5 implementations is preserved.
 
 ## Verifier translations
 
 PRs adding the same verifier in other languages (Go, Rust, Elixir,
-TypeScript, etc.) are explicitly encouraged. They live under
-`verifier/<language>/` and follow the same
-`verify(receipt, public_key) → (ok, reason)` interface.
+TypeScript, etc.) are explicitly encouraged. The repo currently ships
+5 reference verifiers — Python (the canonical reference) + Go +
+TypeScript + Rust + Elixir — and adding more is welcome. They live
+under `verifier/<language>/` and follow the same
+`verify(receipt, public_key) → (ok, reason)` interface (language-idiomatic:
+`{:ok, ...} | {:error, ...}` in Elixir, `Ok(...) | Err(...)` in Rust,
+etc.).
 
 Each translated verifier must:
 1. Pass all 4 vectors in `vectors/v1/` with the same verdicts as the
@@ -69,6 +76,11 @@ Each translated verifier must:
 3. Include a README.md explaining how to run the test suite.
 4. Be byte-exact on the canonical form. The same receipt must produce
    the same canonical bytes as the Python implementation.
+5. Use the minimum-dependency crypto backend available in the
+   language's standard library where possible (e.g. Go's
+   `crypto/ed25519`, Erlang's `:crypto.verify/5`, Rust's `ed25519-dalek`).
+   Pulling in a heavy crypto framework when a stdlib backend exists
+   makes a verifier harder to reason about.
 
 ## Why conformance matters
 
@@ -82,9 +94,10 @@ vectors is highly likely to be byte-exact in the canonical form.
 ## Code style
 
 - **Verifiers:** match the Python reference's style: minimum dependencies
-  (stdlib + `cryptography` for Python, stdlib + a single crypto lib for
-  other languages). No HTTP, no async, no logging — the verifier is
-  pure-function over (receipt, public_key) → verdict.
+  (stdlib + `cryptography` for Python, stdlib only for Go and Elixir,
+  `tweetnacl` for TypeScript, `ed25519-dalek` for Rust). No HTTP, no
+  async, no logging — the verifier is pure-function over
+  (receipt, public_key) → verdict.
 - **Spec docs:** clear, technical, no marketing language. Cross-reference
   other docs in the same directory.
 - **CHANGELOG:** one entry per release. The version header is the

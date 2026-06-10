@@ -84,7 +84,7 @@ verdict difference.
   canonical bytes it computed. If you need to inspect them (for example
   for cross-implementation conformance), use `canonicalBytes()` from
   `canonical.ts` directly.
-- **Receipt format versioning beyond v1.** v0.1.0 receipts (the
+- **Receipt format versioning beyond v1.** pre-v1.0.0 receipts (the
   pre-release) and any future v2+ are rejected at the version check.
   Add support for new versions in a new `verifyN.ts` module, not by
   forking this one.

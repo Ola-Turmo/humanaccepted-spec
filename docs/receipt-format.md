@@ -1,6 +1,6 @@
 # Receipt Format Spec — v1
 
-> **Status:** Stable for v0.1.0 (June 2026). The format is the public contract; the host (`HumanAccepted`) is the paid product. Anyone can implement it. **HumanAccepted does not certify AI Act compliance** — the receipt is an evidence primitive. See §6 for how the fields map to AI Act articles; the receipt is useful evidence, not a compliance pack.
+> **Status:** Stable for v1.0.0 (June 2026). The format is the public contract; the host (`HumanAccepted`) is the paid product. Anyone can implement it. **HumanAccepted does not certify AI Act compliance** — the receipt is an evidence primitive. See §6 for how the fields map to AI Act articles; the receipt is useful evidence, not a compliance pack.
 
 ## 1. What a receipt is
 
@@ -154,9 +154,19 @@ func canonicalize(v any) string {
 4. **No insignificant whitespace.** No spaces after `:`, `,`, etc.
 5. **Arrays preserve `undefined` → `null` per JSON semantics** but typically don't contain undefined entries.
 
-## 4. Verification (the 60-line Python verifier)
+## 4. Verification (the 5 reference verifiers)
 
-The reference verifier is `accepted.verify.verify_receipt` in the Python SDK. It uses the canonicalize from §3 and the Ed25519 verify from the `cryptography` package.
+The reference verifiers live in [`verifier/`](./../verifier/), one per language. All 5 are conformant (4/4 on the test vectors in `vectors/v1/`) and produce byte-exact canonical form. The Python verifier is the canonical reference; the other 4 (Go, TypeScript, Rust, Elixir) are independently maintained to the same byte-exact standard.
+
+| Language | Path | Crypto backend | Lines of code (approx) |
+|----------|------|----------------|------------------------|
+| Python | [`verifier/python/verify.py`](./../verifier/python/verify.py) | `cryptography` (`Ed25519PublicKey`) | ~60 |
+| Go | [`verifier/go/main.go`](./../verifier/go/main.go) | `crypto/ed25519` (stdlib) | ~80 |
+| TypeScript | [`verifier/typescript/canonical.ts`](./../verifier/typescript/canonical.ts) | `tweetnacl` | ~90 |
+| Rust | [`verifier/rust/src/lib.rs`](./../verifier/rust/src/lib.rs) | `ed25519-dalek` 3.0 | ~90 |
+| Elixir | [`verifier/elixir/lib/humanaccepted_verifier.ex`](./../verifier/elixir/lib/humanaccepted_verifier.ex) | Erlang `:crypto.verify/5` (stdlib) | ~80 |
+
+The Python reference verifier (reproduced below) uses the canonicalize from §3 and the Ed25519 verify from the `cryptography` package.
 
 ```python
 import json, base64

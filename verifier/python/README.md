@@ -1,6 +1,6 @@
 # Python reference verifier
 
-A 60-line Python reference verifier for the HumanAccepted receipt format v0.1.0.
+A ~60-line Python reference verifier for the HumanAccepted receipt format v1.0.0. This is the canonical reference; the other 4 reference verifiers (Go, TypeScript, Rust, Elixir) in the `verifier/` directory are independently maintained to the same byte-exact standard on the canonical form.
 
 ## Install
 

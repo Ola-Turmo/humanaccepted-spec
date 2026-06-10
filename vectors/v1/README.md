@@ -5,6 +5,12 @@ receipt format spec v1.0.0. An implementation is conformant if and only if
 its reference verifier produces the same `valid` / `invalid` / `error` verdict
 on each vector as the Python reference verifier in `verifier/python/verify.py`.
 
+All 5 reference verifiers in this repository (Python, Go, TypeScript, Rust,
+Elixir) currently pass all 4 vectors. Cross-language conformance is asserted
+end-to-end — any implementation that disagrees with the Python reference on
+any vector has a bug, and the disagreement shows up the same way in all 5
+verifiers.
+
 ## File naming
 
 - `NN_descriptive-name.json` — one vector per file
@@ -29,7 +35,37 @@ with no test-specific fields.
 ## How to use
 
 ```python
-# Python reference verifier
+A reference test runner that does this is in
+`verifier/python/test_vectors.py`. It is the spec's conformance oracle —
+if your verifier disagrees with it on any vector, you have a bug.
+
+## Test runners in all 5 reference verifiers
+
+Every reference verifier ships a self-contained test runner that asserts
+4/4 on these vectors. Run any of them to confirm a clean install:
+
+```bash
+# Python (canonical reference)
+python3 verifier/python/test_vectors.py
+
+# Go
+cd verifier/go && go run .
+
+# TypeScript (Node 18+)
+cd verifier/typescript && npm test
+
+# Rust
+cd verifier/rust && cargo test
+
+# Elixir (requires Elixir 1.18+ and Erlang/OTP 27+)
+./.run-elixir-conformance.sh
+```
+
+All 5 produce a `4/4 vectors pass, 0 failed.` style summary. If any of them
+returns a different verdict, the bug is in the verifier, not the vectors.
+
+## Worked example (Python reference verifier)
+```python
 import json
 from pathlib import Path
 from verifier.python.verify import verify, _public_key_from_hex_or_pem
@@ -108,6 +144,13 @@ all stemmed from drift between the sign-time and verify-time canonical
 form. The vectors in this directory lock the canonical form down: any
 implementation that produces different canonical bytes for the same
 logical receipt will fail the signature check on at least one vector.
+
+The fact that all 5 reference verifiers (Python, Go, TypeScript, Rust,
+Elixir) pass all 4 vectors with byte-exact canonical form is what makes
+this directory the spec's conformance oracle. If you add a new
+implementation in a sixth language, it must pass these same 4 vectors
+with the same canonical bytes — anything else is a divergence from the
+spec.
 
 ## Why deterministic per-vector keys
 

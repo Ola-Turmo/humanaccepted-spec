@@ -10,6 +10,14 @@ The format is stable. Recommended for new implementations. Contains everything f
 - **CONTRIBUTING.md** is now comprehensive: compatibility policy, change proposal flow, canonicalisation conformance rule, verifier translation policy.
 - **docs/canonical-form.md** is now linked from the receipt-format spec, with worked examples and an explicit "why this matters" section referencing the 4 Ed25519 canonical bugs caught at v0.1.0.
 - **docs/receipt-format.md** §3 now cross-references `canonical-form.md` for the byte-exact rules.
+- **5 reference verifiers**, all passing 4/4 conformance vectors with byte-exact canonical form:
+  - **Python** (`verifier/python/`) — the canonical reference, ~60 LOC, stdlib + `cryptography`
+  - **Go** (`verifier/go/`) — stdlib `crypto/ed25519`
+  - **TypeScript** (`verifier/typescript/`) — `tweetnacl`
+  - **Rust** (`verifier/rust/`) — `ed25519-dalek` 3.0
+  - **Elixir** (`verifier/elixir/`) — Erlang `:crypto.verify/5` (stdlib only, no external deps)
+  - All 5 produce the same canonical bytes for the same logical receipt, verified end-to-end via each verifier's bundled test runner.
+- **`.run-elixir-conformance.sh`** — one-shot script that compiles and runs the Elixir verifier's conformance test runner on any host with Elixir 1.18+ and OTP 27+ installed (or built from source).
 - **Receipt ID format** is unchanged: `rcp_` + 26 base32 Crockford chars (no I, L, O, U).
 
 Backwards-compatibility: v1.0.0 is wire-compatible with v0.1.0. Existing v0.1.0 receipts and verifiers work unchanged.
