@@ -2,8 +2,15 @@
   "name": "01: minimal — happy path, all required fields, signed",
   "version": 1,
   "issued_at": "2026-06-09T16:30:00.000Z",
-  "tenant": { "id": "tn_VECTORS01", "name": "Vector Co", "domain": "vectors.test" },
-  "human": { "id": "u_olav", "auth_method": "sso" },
+  "tenant": {
+    "id": "tn_VECTORS01",
+    "name": "Vector Co",
+    "domain": "vectors.test"
+  },
+  "human": {
+    "id": "u_olav",
+    "auth_method": "sso"
+  },
   "ai": {
     "provider": "openai",
     "model": "gpt-5.5",
@@ -14,9 +21,12 @@
     "final_hash": "sha256:5d0775e8c9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6",
     "final_ref": "r2://humanaccepted-payloads/final-01.json"
   },
-  "context": { "purpose": "vector-01-minimal", "ai_act_class": "limited_risk" },
+  "context": {
+    "purpose": "vector-01-minimal",
+    "ai_act_class": "limited_risk"
+  },
   "signatures": {
-    "tenant_ed25519": "PLACEHOLDER-SIG",
+    "tenant_ed25519": "ed25519:e2961143bbac4b5e254bc9b067fb5f60861ecd11f70691c23d3b6df71a756e65fa55385a524bc5ff39e1ec5b99ac15b00b548ca598afa04c49ba4556b0d88505",
     "cf_attestation": null
   }
 }

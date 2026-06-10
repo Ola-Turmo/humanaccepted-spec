@@ -1,0 +1,18 @@
+{
+  "01: minimal \u2014 happy path, all required fields, signed": {
+    "public_key_hex": "24e352e0bb37b01e1495763ccd80d0683ee35a897f25f674990a301c8fd48b64",
+    "algorithm": "ed25519"
+  },
+  "02: unicode in human-readable fields (purpose, tenant name)": {
+    "public_key_hex": "0d984eb1c6686f2e57b6bf2983435391958c8d8448f9b6dcc9f09d8d1bd606fc",
+    "algorithm": "ed25519"
+  },
+  "03: every optional field populated": {
+    "public_key_hex": "cf853231bd6c912a9ced2aa7dc9a00235a91b208f5016d8c4a4a0874dd84b987",
+    "algorithm": "ed25519"
+  },
+  "04: explicit null on cf_attestation (the only legal value in v1)": {
+    "public_key_hex": "02a5add27850f4ea0427d7c60ac816300c4de9060f8798bbb42fecc86c2a3165",
+    "algorithm": "ed25519"
+  }
+}

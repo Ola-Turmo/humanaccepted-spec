@@ -2,8 +2,14 @@
   "name": "04: explicit null on cf_attestation (the only legal value in v1)",
   "version": 1,
   "issued_at": "2026-06-09T16:33:00.000Z",
-  "tenant": { "id": "tn_VECTORS04", "name": "Signatures Co", "domain": "sig.test" },
-  "human": { "id": "u_olav" },
+  "tenant": {
+    "id": "tn_VECTORS04",
+    "name": "Signatures Co",
+    "domain": "sig.test"
+  },
+  "human": {
+    "id": "u_olav"
+  },
   "ai": {
     "provider": "openai",
     "model": "gpt-5.5",
@@ -14,9 +20,12 @@
     "final_hash": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
     "final_ref": "r2://humanaccepted-payloads/final-04.json"
   },
-  "context": { "purpose": "vector-04-signature-shape", "ai_act_class": "unclassified" },
+  "context": {
+    "purpose": "vector-04-signature-shape",
+    "ai_act_class": "unclassified"
+  },
   "signatures": {
-    "tenant_ed25519": "PLACEHOLDER-SIG",
+    "tenant_ed25519": "ed25519:f4099777644638a390a3a0433ba00520f4bdd183a06d12ede80a63a69ed81ac523a287d676de7b442433294e251e922ddd2b2ee0912f02fb04fd6e7a86067606",
     "cf_attestation": null
   }
 }

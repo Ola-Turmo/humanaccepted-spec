@@ -2,7 +2,11 @@
   "name": "03: every optional field populated",
   "version": 1,
   "issued_at": "2026-06-09T16:32:00.000Z",
-  "tenant": { "id": "tn_VECTORS03", "name": "Full Co", "domain": "full.test" },
+  "tenant": {
+    "id": "tn_VECTORS03",
+    "name": "Full Co",
+    "domain": "full.test"
+  },
   "human": {
     "id": "u_kim",
     "email_hash": "sha256:9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b2b2b2b2b2b2b2b2b2b2b2b",
@@ -23,11 +27,15 @@
     "purpose": "vector-03-all-optional",
     "ai_act_class": "high_risk",
     "user_request_hash": "sha256:3333333333333333333333333333333333333333333333333333333333333333",
-    "tools_used": ["gpt-5.5", "web-search-v3", "calculator"],
+    "tools_used": [
+      "gpt-5.5",
+      "web-search-v3",
+      "calculator"
+    ],
     "policy_version": "p_2026.06.01"
   },
   "signatures": {
-    "tenant_ed25519": "PLACEHOLDER-SIG",
+    "tenant_ed25519": "ed25519:c087b444adf3640497bfd9e3cf8855ac7600e7fba7ef9a05980eda51a762877147fb5b0591764949c2cd04c52d13bd6bc8c718837627a267138429e79a83d208",
     "cf_attestation": null
   }
 }

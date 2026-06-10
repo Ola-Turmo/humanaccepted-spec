@@ -2,8 +2,15 @@
   "name": "02: unicode in human-readable fields (purpose, tenant name)",
   "version": 1,
   "issued_at": "2026-06-09T16:31:00.000Z",
-  "tenant": { "id": "tn_VECTORS02", "name": "Lëtzebuergesch S.A.", "domain": "unicode.test" },
-  "human": { "id": "u_müller", "auth_method": "passkey" },
+  "tenant": {
+    "id": "tn_VECTORS02",
+    "name": "Lëtzebuergesch S.A.",
+    "domain": "unicode.test"
+  },
+  "human": {
+    "id": "u_müller",
+    "auth_method": "passkey"
+  },
   "ai": {
     "provider": "anthropic",
     "model": "claude-sonnet-4.5",
@@ -19,7 +26,7 @@
     "ai_act_class": "minimal_risk"
   },
   "signatures": {
-    "tenant_ed25519": "PLACEHOLDER-SIG",
+    "tenant_ed25519": "ed25519:3f94f5a7bc049ee9ea54afe1cfe74e47490fde7925d24038fd911fe12c4d9bdc018866c63fe72e8c581224fa329025eb4925f8e93ae59bdbb242f6f259d48608",
     "cf_attestation": null
   }
 }
