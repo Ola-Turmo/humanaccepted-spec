@@ -1,0 +1,33 @@
+{
+  "name": "03: every optional field populated",
+  "version": 1,
+  "issued_at": "2026-06-09T16:32:00.000Z",
+  "tenant": { "id": "tn_VECTORS03", "name": "Full Co", "domain": "full.test" },
+  "human": {
+    "id": "u_kim",
+    "email_hash": "sha256:9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b2b2b2b2b2b2b2b2b2b2b2b",
+    "auth_method": "sso",
+    "approver_session": "sess_abcdef0123456789"
+  },
+  "ai": {
+    "provider": "openai",
+    "model": "gpt-5.5",
+    "draft_hash": "sha256:1111111111111111111111111111111111111111111111111111111111111111",
+    "draft_ref": "r2://humanaccepted-payloads/draft-03.json"
+  },
+  "output": {
+    "final_hash": "sha256:2222222222222222222222222222222222222222222222222222222222222222",
+    "final_ref": "r2://humanaccepted-payloads/final-03.json"
+  },
+  "context": {
+    "purpose": "vector-03-all-optional",
+    "ai_act_class": "high_risk",
+    "user_request_hash": "sha256:3333333333333333333333333333333333333333333333333333333333333333",
+    "tools_used": ["gpt-5.5", "web-search-v3", "calculator"],
+    "policy_version": "p_2026.06.01"
+  },
+  "signatures": {
+    "tenant_ed25519": "PLACEHOLDER-SIG",
+    "cf_attestation": null
+  }
+}

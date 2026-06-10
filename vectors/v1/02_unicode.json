@@ -1,0 +1,25 @@
+{
+  "name": "02: unicode in human-readable fields (purpose, tenant name)",
+  "version": 1,
+  "issued_at": "2026-06-09T16:31:00.000Z",
+  "tenant": { "id": "tn_VECTORS02", "name": "Lëtzebuergesch S.A.", "domain": "unicode.test" },
+  "human": { "id": "u_müller", "auth_method": "passkey" },
+  "ai": {
+    "provider": "anthropic",
+    "model": "claude-sonnet-4.5",
+    "draft_hash": "sha256:7c4a8d09ca3762af61e2c2c20b3e3c7c0b3e2c1a0b3e3c7c0b3e2c1a0b3e3c7c",
+    "draft_ref": "r2://humanaccepted-payloads/draft-02.json"
+  },
+  "output": {
+    "final_hash": "sha256:9f8e7d6c5b4a3b2c1d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c",
+    "final_ref": "r2://humanaccepted-payloads/final-02.json"
+  },
+  "context": {
+    "purpose": "支持中文 + emoji 🎉 + Zalgo H̸̢͙̬̩̩̥",
+    "ai_act_class": "minimal_risk"
+  },
+  "signatures": {
+    "tenant_ed25519": "PLACEHOLDER-SIG",
+    "cf_attestation": null
+  }
+}
