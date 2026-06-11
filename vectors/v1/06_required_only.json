@@ -1,0 +1,30 @@
+{
+    "name": "06: only required fields, no optional fields present",
+    "version": 1,
+    "issued_at": "2026-06-11T00:00:00.000Z",
+    "tenant": {
+        "id": "tn_REQONLY1",
+        "name": "Required Corp",
+        "domain": "required.test"
+    },
+    "human": {
+        "id": "u_required"
+    },
+    "ai": {
+        "provider": "openai",
+        "model": "gpt-5.5",
+        "draft_hash": "sha256:6caa03f6c7e6c2b3e8e6c0b3f1d4e6c2b3a5b7c9d1e3f5a7b9c1d3e5f7a9b1c3",
+        "draft_ref": "r2://humanaccepted-payloads/draft-gen.json"
+    },
+    "output": {
+        "final_hash": "sha256:5d0775e8c9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6"
+    },
+    "context": {
+        "purpose": "vector-06-required-only",
+        "ai_act_class": "unclassified"
+    },
+    "signatures": {
+        "tenant_ed25519": "ed25519:317afe2b34fb5be0097e9b9e4e3e2553bcd13bd02896ce514498e674c2711ee9c8b5847dffd72efa03981069062065ac9f206d0e66994a1cf4ee4af314f3c205",
+        "cf_attestation": null
+    }
+}

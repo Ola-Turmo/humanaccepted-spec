@@ -1,0 +1,31 @@
+{
+    "name": "09: empty tenant domain (tenant.domain is an empty string)",
+    "version": 1,
+    "issued_at": "2026-06-11T00:00:00.000Z",
+    "tenant": {
+        "id": "tn_EMPTYD1",
+        "name": "Empty Domain Corp",
+        "domain": ""
+    },
+    "human": {
+        "id": "u_nodomain",
+        "auth_method": "password"
+    },
+    "ai": {
+        "provider": "openai",
+        "model": "gpt-5.5",
+        "draft_hash": "sha256:6caa03f6c7e6c2b3e8e6c0b3f1d4e6c2b3a5b7c9d1e3f5a7b9c1d3e5f7a9b1c3",
+        "draft_ref": "r2://humanaccepted-payloads/draft-gen.json"
+    },
+    "output": {
+        "final_hash": "sha256:5d0775e8c9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6"
+    },
+    "context": {
+        "purpose": "vector-09-empty-domain",
+        "ai_act_class": "limited_risk"
+    },
+    "signatures": {
+        "tenant_ed25519": "ed25519:18092286b54f087d89f49d762f967faa6c34f8819336b5553ebc216028618baf9bf5251782e3ebef30fbfb933a9dee7a7d5eaefd24fa3ba07f71efad0e7d9103",
+        "cf_attestation": null
+    }
+}

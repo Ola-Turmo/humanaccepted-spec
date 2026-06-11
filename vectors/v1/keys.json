@@ -1,18 +1,42 @@
 {
-  "01: minimal \u2014 happy path, all required fields, signed": {
-    "public_key_hex": "24e352e0bb37b01e1495763ccd80d0683ee35a897f25f674990a301c8fd48b64",
-    "algorithm": "ed25519"
-  },
-  "02: unicode in human-readable fields (purpose, tenant name)": {
-    "public_key_hex": "0d984eb1c6686f2e57b6bf2983435391958c8d8448f9b6dcc9f09d8d1bd606fc",
-    "algorithm": "ed25519"
-  },
-  "03: every optional field populated": {
-    "public_key_hex": "cf853231bd6c912a9ced2aa7dc9a00235a91b208f5016d8c4a4a0874dd84b987",
-    "algorithm": "ed25519"
-  },
-  "04: explicit null on cf_attestation (the only legal value in v1)": {
-    "public_key_hex": "02a5add27850f4ea0427d7c60ac816300c4de9060f8798bbb42fecc86c2a3165",
-    "algorithm": "ed25519"
-  }
+    "01: minimal — happy path, all required fields, signed": {
+        "public_key_hex": "24e352e0bb37b01e1495763ccd80d0683ee35a897f25f674990a301c8fd48b64",
+        "algorithm": "ed25519"
+    },
+    "02: unicode in human-readable fields (purpose, tenant name)": {
+        "public_key_hex": "0d984eb1c6686f2e57b6bf2983435391958c8d8448f9b6dcc9f09d8d1bd606fc",
+        "algorithm": "ed25519"
+    },
+    "03: every optional field populated": {
+        "public_key_hex": "cf853231bd6c912a9ced2aa7dc9a00235a91b208f5016d8c4a4a0874dd84b987",
+        "algorithm": "ed25519"
+    },
+    "04: explicit null on cf_attestation (the only legal value in v1)": {
+        "public_key_hex": "02a5add27850f4ea0427d7c60ac816300c4de9060f8798bbb42fecc86c2a3165",
+        "algorithm": "ed25519"
+    },
+    "05: empty purpose string (context.purpose is an empty string)": {
+        "public_key_hex": "9cff9d0a208acc82e5c718bab06ba5f60464044b9b12ac0b3152cab584ff5b17",
+        "algorithm": "ed25519"
+    },
+    "06: only required fields, no optional fields present": {
+        "public_key_hex": "37709259bd297d81c0f88df9e3d9d1a55cd1377d5745e3b087e9ff3f2f3ebaee",
+        "algorithm": "ed25519"
+    },
+    "07: human.email_hash populated (optional field present)": {
+        "public_key_hex": "69d2ceb1beb3bd40f14b496c77f256a77ed7c6abe893c0d3c2f5a38775b3860c",
+        "algorithm": "ed25519"
+    },
+    "08: context.tools_used with multiple tools and policy_version": {
+        "public_key_hex": "6b17dc86fe7f40b7668c92ceb0e4b6ca7792659a9424cfac03afae9fd4eaf56d",
+        "algorithm": "ed25519"
+    },
+    "09: empty tenant domain (tenant.domain is an empty string)": {
+        "public_key_hex": "bb93ede88ee850a55024c67cd5c60e8b434da3f9a00687588942ea837034d7cf",
+        "algorithm": "ed25519"
+    },
+    "10: output.final_ref absent (only final_hash), email_hash present, tools_used absent": {
+        "public_key_hex": "1bd6627752887eefeae07cf4c409f9780e769e29ad60561c83831cda0ae64fb0",
+        "algorithm": "ed25519"
+    }
 }

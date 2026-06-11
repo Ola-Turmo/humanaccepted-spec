@@ -1,0 +1,30 @@
+{
+    "name": "05: empty purpose string (context.purpose is an empty string)",
+    "version": 1,
+    "issued_at": "2026-06-11T00:00:00.000Z",
+    "tenant": {
+        "id": "tn_VECTORS99",
+        "name": "Vector Co",
+        "domain": "vectors.test"
+    },
+    "human": {
+        "id": "u_olav"
+    },
+    "ai": {
+        "provider": "openai",
+        "model": "gpt-5.5",
+        "draft_hash": "sha256:6caa03f6c7e6c2b3e8e6c0b3f1d4e6c2b3a5b7c9d1e3f5a7b9c1d3e5f7a9b1c3",
+        "draft_ref": "r2://humanaccepted-payloads/draft-gen.json"
+    },
+    "output": {
+        "final_hash": "sha256:5d0775e8c9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6"
+    },
+    "context": {
+        "purpose": "",
+        "ai_act_class": "minimal_risk"
+    },
+    "signatures": {
+        "tenant_ed25519": "ed25519:ef93430de87f08540b73f4c1502b0be7ca7fed2596e8533a6718c15c4e2b88cfa07bed00d6a98ea8b62d662a4bd42915e979d6e8afdaf07ae01b9ba864b86903",
+        "cf_attestation": null
+    }
+}

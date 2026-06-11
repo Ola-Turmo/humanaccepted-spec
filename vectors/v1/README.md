@@ -6,7 +6,7 @@ its reference verifier produces the same `valid` / `invalid` / `error` verdict
 on each vector as the Python reference verifier in `verifier/python/verify.py`.
 
 All 5 reference verifiers in this repository (Python, Go, TypeScript, Rust,
-Elixir) currently pass all 4 vectors. Cross-language conformance is asserted
+Elixir) currently pass all 10 vectors. Cross-language conformance is asserted
 end-to-end — any implementation that disagrees with the Python reference on
 any vector has a bug, and the disagreement shows up the same way in all 5
 verifiers.

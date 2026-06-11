@@ -1,0 +1,31 @@
+{
+    "name": "07: human.email_hash populated (optional field present)",
+    "version": 1,
+    "issued_at": "2026-06-11T00:00:00.000Z",
+    "tenant": {
+        "id": "tn_HASH001",
+        "name": "Hash Corp",
+        "domain": "hash.test"
+    },
+    "human": {
+        "id": "u_withhash",
+        "email_hash": "sha256:aabbccddeeff00112233445566778899aabbccddeeff00112233445566778899"
+    },
+    "ai": {
+        "provider": "openai",
+        "model": "gpt-5.5",
+        "draft_hash": "sha256:6caa03f6c7e6c2b3e8e6c0b3f1d4e6c2b3a5b7c9d1e3f5a7b9c1d3e5f7a9b1c3",
+        "draft_ref": "r2://humanaccepted-payloads/draft-gen.json"
+    },
+    "output": {
+        "final_hash": "sha256:5d0775e8c9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6"
+    },
+    "context": {
+        "purpose": "vector-07-email-hash",
+        "ai_act_class": "high_risk"
+    },
+    "signatures": {
+        "tenant_ed25519": "ed25519:5fbcdf73b9a3e3e53b2dbd7524098f6ef2fa41fda58634f8280df3cc13188ce02068ff102cb527e8a4f8a5542cf7f7b381cf34801aac77148f625766e04a280a",
+        "cf_attestation": null
+    }
+}

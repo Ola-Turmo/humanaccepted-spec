@@ -1,0 +1,32 @@
+{
+    "name": "10: output.final_ref absent (only final_hash), email_hash present, tools_used absent",
+    "version": 1,
+    "issued_at": "2026-06-11T00:00:00.000Z",
+    "tenant": {
+        "id": "tn_NOREF1",
+        "name": "No Ref Corp",
+        "domain": "noref.test"
+    },
+    "human": {
+        "id": "u_noref",
+        "auth_method": "sso",
+        "email_hash": "sha256:eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+    },
+    "ai": {
+        "provider": "openai",
+        "model": "gpt-5.5",
+        "draft_hash": "sha256:6caa03f6c7e6c2b3e8e6c0b3f1d4e6c2b3a5b7c9d1e3f5a7b9c1d3e5f7a9b1c3",
+        "draft_ref": "r2://humanaccepted-payloads/draft-gen.json"
+    },
+    "output": {
+        "final_hash": "sha256:5d0775e8c9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c6"
+    },
+    "context": {
+        "purpose": "vector-10-no-ref",
+        "ai_act_class": "minimal_risk"
+    },
+    "signatures": {
+        "tenant_ed25519": "ed25519:2ab6613e04a9e6ab8d34ff7cc8fbf5e0172104aa4df7a95160446924fa4dca53229d79aa0016f5ebb8e5af898b339301809eb425be87a6b49ff6761a99a92006",
+        "cf_attestation": null
+    }
+}
